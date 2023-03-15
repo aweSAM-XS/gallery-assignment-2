@@ -7,7 +7,7 @@ const gallery = document.getElementById('gallery')
 const caption = document.getElementById('caption')
 
 // directory to fetch images
-const imagesPath = '../images';
+const imagesPath = '/images';
 
 // Define an array of image data objects
 const imageData = [];
@@ -50,7 +50,7 @@ const getImages = (files) => {
     }
     for (let i = 0; i < imageData.length; i++) {
         const image = imageData[i];
-        const thumbnailItem = `<img src="../images/${image.thumb}" alt="${image.caption}" class="thumbnail-img"/>`;
+        const thumbnailItem = `<img src="/images/${image.thumb}" alt="${image.caption}" class="thumbnail-img"/>`;
         thumbnailItems.push(thumbnailItem);
     }
     thumbnailItems.forEach((thumb, index) => {
@@ -58,7 +58,7 @@ const getImages = (files) => {
         thumbnailElement.innerHTML = thumb;
         thumbnailElement.addEventListener('click', () => {
             // Update the featured image and caption
-            featuredImg.src = `../images/${imageData[index].full}` ;
+            featuredImg.src = `/images/${imageData[index].full}` ;
             featuredImg.alt = imageData[index].caption;
             featuredCaption.textContent = imageData[index].caption;
             gallery.style.backgroundColor = imageData[index].caption.replace(' FLOWERS', '')
