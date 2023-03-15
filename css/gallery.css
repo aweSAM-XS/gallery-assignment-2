@@ -1,0 +1,46 @@
+body {
+	font-family: sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#gallery {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 2em;
+}
+
+figure {
+	margin-bottom: 1em;
+}
+
+#featured {
+	border: 1px solid black;
+}
+
+.thumbails {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.thumbails li {
+	margin: 0.5em;
+	filter: grayscale(100%);
+	transition: filter 0.3s ease-in-out;
+}
+
+.thumbails li:hover, .thumbails li.active {
+	filter: grayscale(0%);
+	cursor: pointer;
+}
+
+#caption {
+	text-align: center;
+}
