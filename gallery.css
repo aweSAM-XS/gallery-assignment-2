@@ -38,13 +38,21 @@ h1 {
     display: flex;
     height: 80vh;
     width: 90%;
-    align-items: center;
 }
 
 
 .figure {
     margin: 1em;
     height: 100%;
+}
+
+#caption {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    font-size: 2rem;
 }
 
 #featured {
@@ -57,11 +65,13 @@ h1 {
 
 ul {
     display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
     flex-wrap: wrap;
     list-style: none;
+	justify-content: center;
     gap: 10px;
 	height: 100%;
+	max-width: 35%;
 }
 
 ul li {
@@ -77,14 +87,7 @@ ul li.active {
     cursor: pointer;
 }
 
-#caption {
-    text-align: center;
-    background-color: white;
-    padding: 20px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    font-size: 2rem;
-}
+
 
 .thumbnail-img {
     border-radius: 10px;

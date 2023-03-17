@@ -2,6 +2,7 @@
 const figure = document.querySelector('#featured');
 const caption = document.querySelector('#gallery figure figcaption');
 const ul = document.querySelector('ul');
+const pink = document.querySelector('li')
 
 //An array of <img/> elements to be rendered
 const thumbnailList = []; 
@@ -42,6 +43,7 @@ const generateThumbnails = (thumbails) => {
     const thumbnailElements = thumbnailList.map((thumbnailImage, i) => {
         const thumbnailElement = document.createElement('li');
         thumbnailElement.innerHTML = thumbnailImage;
+        thumbnailImage.includes('pink') ? thumbnailElement.classList.add('active') : null;
         thumbnailElement.addEventListener('click', () => {
             figure.src = `${thumbnails[i].full}`;
             figure.alt = thumbnails[i].caption;
@@ -55,7 +57,6 @@ const generateThumbnails = (thumbails) => {
         });
         return thumbnailElement;
     });
-
     ul.append(...thumbnailElements);
 };
 
