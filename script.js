@@ -2,15 +2,25 @@
 const figure = document.querySelector('#featured');
 const caption = document.querySelector('#gallery figure figcaption');
 const ul = document.querySelector('ul');
-const pink = document.querySelector('li')
+const pink = document.querySelector('li');
 
 //An array of <img/> elements to be rendered
-const thumbnailList = []; 
+const thumbnailList = [];
 const thumbnails = [
     {
         thumb: 'flowers-pink-small.jpg',
         full: 'flowers-pink-large.jpg',
         caption: 'Pink Flowers',
+    },
+    {
+        thumb: 'flowers-yellow-small.jpg',
+        full: 'flowers-yellow-large.jpg',
+        caption: 'Yellow Flowers',
+    },
+    {
+        thumb: 'flowers-white-small.jpg',
+        full: 'flowers-white-large.jpg',
+        caption: 'White Flowers',
     },
     {
         thumb: 'flowers-purple-small.jpg',
@@ -21,16 +31,6 @@ const thumbnails = [
         thumb: 'flowers-red-small.jpg',
         full: 'flowers-red-large.jpg',
         caption: 'Red Flowers',
-    },
-    {
-        thumb: 'flowers-white-small.jpg',
-        full: 'flowers-white-large.jpg',
-        caption: 'White Flowers',
-    },
-    {
-        thumb: 'flowers-yellow-small.jpg',
-        full: 'flowers-yellow-large.jpg',
-        caption: 'Yellow Flowers',
     },
 ];
 
@@ -43,12 +43,17 @@ const generateThumbnails = (thumbails) => {
     const thumbnailElements = thumbnailList.map((thumbnailImage, i) => {
         const thumbnailElement = document.createElement('li');
         thumbnailElement.innerHTML = thumbnailImage;
-        thumbnailImage.includes('pink') ? thumbnailElement.classList.add('active') : null;
+        thumbnailImage.includes('pink')
+            ? thumbnailElement.classList.add('active')
+            : null;
         thumbnailElement.addEventListener('click', () => {
             figure.src = `${thumbnails[i].full}`;
             figure.alt = thumbnails[i].caption;
             caption.textContent = thumbnails[i].caption;
-            caption.style.backgroundColor = thumbnails[i].caption.replace(' Flowers', '');
+            caption.style.backgroundColor = thumbnails[i].caption.replace(
+                ' Flowers',
+                ''
+            );
 
             thumbnailElements.forEach((element) => {
                 element.classList.remove('active');

@@ -69,6 +69,7 @@ ul {
     flex-wrap: wrap;
     list-style: none;
 	justify-content: center;
+    align-items: center;
     gap: 10px;
 	height: 100%;
 	max-width: 35%;
